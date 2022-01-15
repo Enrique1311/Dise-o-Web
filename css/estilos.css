@@ -1,3 +1,13 @@
+:root {
+    --primary: rgb(102, 102, 233);
+    --secondary: rgb(7, 240, 216);
+    --shadow: rgb(7, 240, 216, .5);
+    --light: rgb(255, 255, 255);
+    --dark-grey: rgb(98, 98, 133);
+    --light-grey: rgb(212, 212, 214);
+    --my-blue: rgb(5, 5, 160);
+    scroll-behavior: smooth;
+}
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +17,7 @@ body {
     font-family: "roboto", sans-serif;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: rgb(5, 5, 160);
+    color: var(--my-blue);
     font-weight: 400;
 }
 .container {
@@ -27,6 +37,23 @@ h1 {
     font-size: 50px;
 }
 
+/***********Principal buttons***********/
+.my-btn {
+    margin-top: 25px;
+    width: 150px;
+    display: inline-block;
+    background: var(--secondary);
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--light);
+}
+.my-btn:hover {
+    box-shadow: 0 0 20px 0 var(--shadow);
+    font-weight: bold;
+}
+
 /****************header*************/
 header::before {
     content: "";
@@ -36,10 +63,9 @@ header::before {
 nav {
     width: 100%;
     height: 80px;
-    background:rgb(102, 102, 233);
+    background: var(--primary);
     border-bottom: 1px solid transparent;
-    box-shadow: 1px 1px 10px 0 rgb(102, 102, 233, .5);
-    /*transition: ease-in-out 0.5s;*/
+    transition: ease-in-out 0.5s;
     position: fixed;
     top: 0;
     z-index: 100;
@@ -61,28 +87,33 @@ nav {
 }
 .header-links {
     font-weight: 300;
+    transition: ease-in-out 0.5s;
 }
 .nav .header-links a {
-    color: rgb(255, 255, 255);
+    color: var(--light);
     text-decoration: none;
-    margin-left: 20px;
+    padding: 0 10px;
+    transition: all 0.2s ease-in-out;
+}
+.nav .header-links a:hover {
+    color: var(--secondary);
+    transform: scale(1.2);
+    border-radius: 5px;
+    box-shadow: 0 0 10px 0 var(--secondary);
 }
 .hamburguer {
-    width: 60px;
-    height: 60px;
-    background: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: var(--light-grey);
     border-radius: 50%;
     z-index: 100;
     cursor: pointer;
-    transition: color .5s ease-in;
+    transition: all .5s ease-in;
     display: none;
 }
 .hamburguer img {
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
 }
 .header-content {
     width: 100%;
@@ -110,23 +141,9 @@ nav {
 .header-content p {
     font-weight: 300;
     margin-top: 14px;
-    color: grey;
+    color: var(--dark-grey);
 }
-.header-content a {
-    margin-top: 25px;
-    width: 150px;
-    display: inline-block;
-    background: rgb(39, 238, 228);
-    text-align: center;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-}
-.header-content a:hover {
-    box-shadow: 0 10px 10px rgb(39, 238, 228, .5);
-    font-weight: bold;
-}
+
 .title {
     font-size: 50px;
     margin-bottom: 30px;
@@ -135,7 +152,7 @@ nav {
 
 /************About Us*************/
 .about-us {
-    background: rgb(224, 223, 223);
+    background: var(--light-grey);
 }
 .article-container {
     display: flex;
@@ -153,7 +170,7 @@ nav {
 }
 .article:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 10px 0 rgb(102, 102, 102);
+    box-shadow: 0 0 10px 0 var(--dark-grey);
     transition: .5s;
 }
 .article > img {
@@ -166,21 +183,20 @@ nav {
 }
 .article p {
     font-weight: 300;
-    color: grey;
+    color: var(--dark-grey);
     margin-top: 15px;
     padding-bottom: 20px;
 }
 .article a {
-    color: grey;
+    color: var(--dark-grey);
     text-decoration: none;
     font-weight: 400;
     padding: 5px 10px;
     border-radius: 10px;
-    color: grey;
 }
 .article a:hover {
-    color: rgb(59, 59, 59);
-    box-shadow: 0 0 10px 0 grey;
+    color: var(--dark-grey);
+    box-shadow: 0 0 10px 0 var(--dark-grey);
     transition: .5s;
 }
 
@@ -204,28 +220,13 @@ nav {
 .questions-texts p {
     font-weight: 300;
     margin-top: 14px;
-    color: grey;
+    color: var(--dark-grey);
     text-align: center;
-}
-.questions-texts a {
-    margin-top: 25px;
-    width: 150px;
-    display: inline-block;
-    background: rgb(39, 238, 228);
-    text-align: center;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-}
-.questions-texts a:hover {
-    box-shadow: 0 10px 10px rgb(39, 238, 228, .5);
-    font-weight: bold;
 }
 
 /************Results***************/
 .results {
-    background: rgb(102, 102, 233);
+    background: var(--primary);
     padding-top: 30px;
 }
 .results-content {
@@ -274,21 +275,6 @@ nav {
     color:rgb(255, 255, 255);
     font-weight: 300;
     margin: 20px 0;
-}
-.text-results a {
-    margin-top: 25px;
-    width: 150px;
-    display: inline-block;
-    background: rgb(39, 238, 228);
-    text-align: center;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
-    color: rgb(255, 255, 255);
-}
-.text-results a:hover {
-    box-shadow: 0 10px 10px rgb(39, 238, 228, .5);
-    font-weight: bold;
 }
 
 /*************Services*****************/
@@ -340,13 +326,13 @@ footer {
 .footer-part a {
     display: block;
     text-decoration: none;
-    color: rgb(112, 112, 156);
+    color: var(--dark-grey);
     font-size: 300;
     transition: all .3s ease-in-out;
     margin-bottom: 10px;
 }
 .footer-part a:hover {
-    color: rgb(44, 44, 44);
+    color: rgb(22, 22, 22);
     transform: scale(1.2);
 
 }
@@ -380,7 +366,7 @@ footer {
         gap: 0;
     }
     .header-content > img {
-        width: 450px;
+        width: 400px;
     }
     .header-texts {
         padding: 0 40px;
@@ -437,6 +423,28 @@ footer {
     }
 }
 @media screen and (max-width: 500px) {
+    .header-links {
+        position: fixed;
+        background: rgb(102, 102, 233);
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        clip-path: circle(0% at 100% 0);
+    }
+    .nav .menu2 {
+        -wewkit-clip-path: circle(150% at 100% 0);
+        clip-path: circle(150% at 100% 0);
+    }
+    .hamburguer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .title {
         font-size: 30px;
     }
