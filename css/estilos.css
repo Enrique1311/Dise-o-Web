@@ -1,5 +1,5 @@
 :root {
-    --primary: rgb(102, 102, 233);
+    --primary: rgb(143, 143, 250);
     --secondary: rgb(7, 240, 216);
     --shadow: rgb(7, 240, 216, .5);
     --light: rgb(255, 255, 255);
@@ -52,6 +52,8 @@ h1 {
 .my-btn:hover {
     box-shadow: 0 0 20px 0 var(--shadow);
     font-weight: bold;
+    transform: scale(1.1);
+    transition: .5s;
 }
 
 /****************header*************/
