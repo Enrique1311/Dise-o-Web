@@ -16,12 +16,12 @@ window.addEventListener("scroll", function() {
 // Menu
 headerLinks = document.querySelectorAll(".header-links")[0];
 let closedMenu = true;
-document.querySelectorAll(".hamburguer")[0].addEventListener("click", function() {
+document.querySelectorAll(".hamburguer-menu")[0].addEventListener("click", function() {
     if (closedMenu) {
-        document.querySelectorAll(".hamburguer")[0].style.background="rgb(255,255,255)";
+        document.querySelectorAll(".hamburguer-menu")[0].style.background="rgb(255,255,255)";
         closedMenu = false;
     } else {
-        document.querySelectorAll(".hamburguer")[0].style.background="rgb(255,255,255,.5)";
+        document.querySelectorAll(".hamburguer-menu")[0].style.background="rgb(255,255,255,.5)";
         closedMenu = true;  
     }
     headerLinks.classList.toggle("menu2")
